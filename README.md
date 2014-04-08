@@ -4,9 +4,10 @@ This short primer on [Python](http://www.python.org/) is designed to provide a r
 
 The primer is spread across a collection of [IPython Notebooks](http://ipython.org/notebook.html), and the easiest way to use the primer is to [install IPython Notebook](http://ipython.org/install.html) on your computer. You can also [install Python](https://www.python.org/downloads/), and manually copy and paste the pieces of sample code into the Python interpreter, as the primer only makes use of the Python standard libraries.
 
-There are two versions of the primer. One version has the entire primer in a single notebook:
+There are three versions of the primer. Two versions contain the entire primer in a single notebook:
 
-* [Python for Data Science (all)](Python_for_Data_Science_all.ipynb)
+* Single IPython Notebook: [Python_for_Data_Science_all.ipynb](Python_for_Data_Science_all.ipynb)
+* Single web page (HTML): [Python_for_Data_Science_all.html](Python_for_Data_Science_all.html)
 
 The other version divides the primer into 5 separate notebooks:
 
