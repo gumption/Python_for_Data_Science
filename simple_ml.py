@@ -1,3 +1,5 @@
+from __future__ import print_function, division
+
 ''' Utility functions to implement some simple Machine Learning tasks
 '''
 
@@ -12,6 +14,7 @@ __status__ = 'Development'
 
 import math
 import operator
+
 from collections import defaultdict, Counter
 
 
@@ -149,9 +152,10 @@ def attribute_value(instance, attribute, attribute_names):
 
 def print_attribute_names_and_values(instance, attribute_names):
     '''Prints the attribute names and values for instance'''
-    print 'Values for the', len(attribute_names), 'attributes:\n'
+    print('Values for the', len(attribute_names), 'attributes:', end='\n\n')
     for i in range(len(attribute_names)):
-        print attribute_names[i], '=', attribute_value(instance, attribute_names[i], attribute_names)
+        print(attribute_names[i], '=', 
+        	  attribute_value(instance, attribute_names[i], attribute_names))
 
 
 def attribute_value_counts(instances, attribute, attribute_names):
@@ -167,13 +171,13 @@ def attribute_value_counts(instances, attribute, attribute_names):
 def print_all_attribute_value_counts(instances, attribute_names):
     '''Returns a list of defaultdicts containing the counts of occurrences of each value of each attribute in the list of instances.
     attribute_names is a list of names of attributes.'''
-    num_instances = len(instances) * 1.0
+    num_instances = len(instances)
     for attribute in attribute_names:
         value_counts = attribute_value_counts(instances, attribute, attribute_names)
-        print '{}:'.format(attribute),
+        print('{}:'.format(attribute), end=' ')
         for value, count in sorted(value_counts.iteritems(), key=operator.itemgetter(1), reverse=True):
-            print '{} = {} ({:5.3f}),'.format(value, count, count / num_instances),
-        print  
+            print('{} = {} ({:5.3f}),'.format(value, count, count / num_instances), end=' ')
+        print()
         
     
 def entropy(instances, class_index=0, attribute_name=None, value_name=None):
@@ -188,18 +192,18 @@ def entropy(instances, class_index=0, attribute_name=None, value_name=None):
     if num_values <= 1:
         return 0
     attribute_entropy = 0.0
-    n = float(num_instances)
     if attribute_name:
-        print 'entropy({}{}) = '.format(attribute_name, '={}'.format(value_name) if value_name else '')
+        print('entropy({}{}) = '.format(attribute_name, 
+        	'={}'.format(value_name) if value_name else ''))
     for value in value_counts:
-        value_probability = value_counts[value] / n
+        value_probability = value_counts[value] / num_instances
         child_entropy = value_probability * math.log(value_probability, num_values)
         attribute_entropy -= child_entropy
         if attribute_name:
-            print '  - p({0}) x log(p({0}), {1})  =  - {2:5.3f} x log({2:5.3f})  =  {3:5.3f}'.format(
-                value, num_values, value_probability, child_entropy)
+            print('  - p({0}) x log(p({0}), {1})  =  - {2:5.3f} x log({2:5.3f})  =  {3:5.3f}'.format(
+                value, num_values, value_probability, child_entropy))
     if attribute_name:
-        print '  = {:5.3f}'.format(attribute_entropy)
+        print('  = {:5.3f}'.format(attribute_entropy))
     return attribute_entropy
 
 
@@ -210,10 +214,11 @@ def information_gain(instances, parent_index, class_index=0, attribute_name=Fals
     for instance in instances:
         child_instances[instance[parent_index]].append(instance)
     children_entropy = 0.0
-    n = float(len(instances))
+    num_instances = len(instances)
     for child_value in child_instances:
-        child_probability = len(child_instances[child_value]) / n
-        children_entropy += child_probability * entropy(child_instances[child_value], class_index, attribute_name, child_value)
+        child_probability = len(child_instances[child_value]) / num_instances
+        children_entropy += child_probability * entropy(
+        	child_instances[child_value], class_index, attribute_name, child_value)
     return parent_entropy - children_entropy
     
 
@@ -283,14 +288,15 @@ def create_decision_tree(instances, candidate_attribute_indexes=None, class_inde
     # If the dataset is empty or the candidate attributes list is empty, return the default value
     if not instances or not candidate_attribute_indexes:
         if trace:
-            print '{}Using default class {}'.format('< ' * trace, default_class)
+            print('{}Using default class {}'.format('< ' * trace, default_class))
         return default_class
     
     # If all the instances have the same class label, return that class label
     elif len(class_labels_and_counts) == 1:
         class_label = class_labels_and_counts.most_common(1)[0][0]
         if trace:
-            print '{}All {} instances have label {}'.format('< ' * trace, len(instances), class_label)
+            print('{}All {} instances have label {}'.format('< ' * trace, 
+            	len(instances), class_label))
         return class_label
     else:
         default_class = simple_ml.majority_value(instances, class_index)
@@ -298,7 +304,7 @@ def create_decision_tree(instances, candidate_attribute_indexes=None, class_inde
         # Choose the next best attribute index to best classify the instances
         best_index = simple_ml.choose_best_attribute_index(instances, candidate_attribute_indexes, class_index)        
         if trace:
-            print '{}Creating tree node for attribute index {}'.format('> ' * trace, best_index)
+            print('{}Creating tree node for attribute index {}'.format('> ' * trace, best_index))
 
         # Create a new decision tree node with the best attribute index and an empty dictionary object (for now)
         tree = {best_index:{}}
@@ -310,13 +316,13 @@ def create_decision_tree(instances, candidate_attribute_indexes=None, class_inde
         remaining_candidate_attribute_indexes = [i for i in candidate_attribute_indexes if i != best_index]
         for attribute_value in partitions:
             if trace:
-                print '{}Creating subtree for value {} ({}, {}, {}, {})'.format(
+                print('{}Creating subtree for value {} ({}, {}, {}, {})'.format(
                     '> ' * trace,
                     attribute_value, 
                     len(partitions[attribute_value]), 
                     len(remaining_candidate_attribute_indexes), 
                     class_index, 
-                    default_class)
+                    default_class))
                 
             # Create a subtree for each value of the the best attribute
             subtree = create_decision_tree(
@@ -355,7 +361,7 @@ def classification_accuracy(tree, testing_instances, class_index=0):
         actual_value = testing_instances[i][class_index]
         if prediction == actual_value:
             num_correct += 1
-    return float(num_correct) / len(testing_instances)
+    return num_correct / len(testing_instances)
     
 
 def compute_learning_curve(instances, num_partitions=10):

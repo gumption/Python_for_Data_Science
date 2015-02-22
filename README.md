@@ -26,3 +26,14 @@ There are also 2 data files, based on the [mushroom dataset](https://archive.ics
 
 * [`agaricus-lepiota.data`](agaricus-lepiota.data): a machine-readable list of examples or instances of mushrooms, represented by a comma-separated list of attribute values
 * [`agaricus-lepiota.attributes`](agaricus-lepiota.attributes): a machine-readable list of attribute names and possible attribute values and their abbreviations
+
+## Change Log
+
+2015-02-22
+
+* Added `from __future__ import print_function, division` for Python 3 compatibility
+* Updated `simple_ml.py` to also use Python 3 `print_function` and `division`
+* Changed "call by reference" to "call by sharing"
+* Added `isinstance()` (and reference to duck typing) to section on `type()`
+* Added variable for `delimiter` rather than hard-coding `'|'` character
+* Cleaned up various cells
