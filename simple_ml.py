@@ -5,7 +5,7 @@ from __future__ import print_function, division
 
 __author__ = 'Joe McCarthy'
 __copyright__ = 'Copyright 2014, Atigeo LLC'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 __date__ = '2014-04-04'
 __maintainer__ = 'Joe McCarthy'
 __email__ = 'joe.mccarthy@atigeo.com'
@@ -175,7 +175,7 @@ def print_all_attribute_value_counts(instances, attribute_names):
     for attribute in attribute_names:
         value_counts = attribute_value_counts(instances, attribute, attribute_names)
         print('{}:'.format(attribute), end=' ')
-        for value, count in sorted(value_counts.iteritems(), key=operator.itemgetter(1), reverse=True):
+        for value, count in sorted(value_counts.items(), key=operator.itemgetter(1), reverse=True):
             print('{} = {} ({:5.3f}),'.format(value, count, count / num_instances), end=' ')
         print()
         
@@ -261,7 +261,7 @@ def split_instances(instances, attribute_index):
 
 def partition_instances(instances, num_partitions):
     '''Returns a list of relatively equally sized disjoint sublists (partitions) of the list of instances'''
-    return [[instances[j] for j in xrange(i, len(instances), num_partitions)] for i in xrange(num_partitions)]
+    return [[instances[j] for j in range(i, len(instances), num_partitions)] for i in xrange(num_partitions)]
 
 
 def create_decision_tree(instances, candidate_attribute_indexes=None, class_index=0, default_class=None, trace=0):
@@ -280,8 +280,8 @@ def create_decision_tree(instances, candidate_attribute_indexes=None, class_inde
     
     # if no candidate_attribute_indexes are provided, assume that we will use all but the target_attribute_index
     if candidate_attribute_indexes is None:
-        candidate_attribute_indexes = range(len(instances[0]))
-        candidate_attribute_indexes.remove(class_index)
+        candidate_attribute_indexes = [i for i in range(len(instances[0])) if i != class_index]
+        #candidate_attribute_indexes.remove(class_index)
         
     class_labels_and_counts = Counter([instance[class_index] for instance in instances])
 
@@ -344,8 +344,8 @@ def classify(tree, instance, default_class=None):
         return default_class
     if not isinstance(tree, dict): 
         return tree
-    attribute_index = tree.keys()[0]
-    attribute_values = tree.values()[0]
+    attribute_index = list(tree.keys())[0]  # using list(dict.keys()) for Python 3 compatibiity
+    attribute_values = list(tree.values())[0]
     instance_attribute_value = instance[attribute_index]
     if instance_attribute_value not in attribute_values:
         return default_class
@@ -356,7 +356,7 @@ def classification_accuracy(tree, testing_instances, class_index=0):
     '''Returns the accuracy of classifying testing_instances with tree, 
     where the class label is in position class_index'''
     num_correct = 0
-    for i in xrange(len(testing_instances)):
+    for i in range(len(testing_instances)):
         prediction = classify(tree, testing_instances[i])
         actual_value = testing_instances[i][class_index]
         if prediction == actual_value:
@@ -376,7 +376,7 @@ def compute_learning_curve(instances, num_partitions=10):
     testing_instances = partitions[-1][:]
     training_instances = partitions[0][:]
     accuracy_list = []
-    for i in xrange(1, num_partitions):
+    for i in range(1, num_partitions):
         # for each iteration, the training set is composed of partitions 0 through i - 1
         tree = create_decision_tree(training_instances)
         partition_accuracy = classification_accuracy(tree, testing_instances)
