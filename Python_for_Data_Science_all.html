@@ -2036,7 +2036,7 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are 2 major versions of Python in widespread use: <a href="https://docs.python.org/2/">Python 2</a> and <a href="https://docs.python.org/3/">Python 3</a>. Python 3 has some features that are not backward compatible with Python 2, and some Python 2 libraries have not been updated to work with Python 3. I have been using Python 2, primarily because I use some of those Python 2 libraries, but an increasing proportion of them are migrating to Python 3, and I anticipate shifting to Python 3 in the near future.</p>
+<p>There are 2 major versions of Python in widespread use: <a href="https://docs.python.org/2/">Python 2</a> and <a href="https://docs.python.org/3/">Python 3</a>. Python 3 has some features that are not backward compatible with Python 2, and some Python 2 libraries have not been updated to work with Python 3. I have been using Python 2, primarily because I use some of those Python 2[-only] libraries, but an increasing proportion of them are migrating to Python 3, and I anticipate shifting to Python 3 in the near future.</p>
 <p>For more on the topic, I recommend a very well documented IPython Notebook, which includes numerous helpful examples and links, by <a href="http://sebastianraschka.com/">Sebastian Raschka</a>, <a href="http://nbviewer.ipython.org/github/rasbt/python_reference/blob/master/tutorials/key_differences_between_python_2_and_3.ipynb">Key differences between Python 2.7.x and Python 3.x</a> ... or <a href="https://www.google.com/q=python%202%20vs%203">googling Python 2 vs 3</a>.</p>
 <p>I received an email request from a Python 3 programmer who suggested that a relatively minor change in this notebook would enable it to run with Python 2 or Python 3: importing the <code>print_function</code> from <a href="https://docs.python.org/2/library/__future__.html"><code>__future__</code></a>, and changing my <a href="https://docs.python.org/2/reference/simple_stmts.html#print"><code>print</code> statements (Python 2)</a> to <a href="https://docs.python.org/3/library/functions.html#print"><code>print</code> function calls (Python 3)</a>. Although a relatively minor conceptual change, it necessitates the changing of many cells to reflect the Python 3 <code>print</code> syntax.</p>
 <p>I find the arguments for <a href="https://www.python.org/dev/peps/pep-3105/">making <code>print</code> a function rather than statement</a> compelling - especially as it is more consistent with printing functionality in many other programming langugages - and so while I do not want to convert this notebook to a Python 3 notebook, I have implemented this change so that it can be used in either Python 2 or Python 3. However, while I have verified that it still works in Python 2, I have not tested it in Python 3.</p>
@@ -2075,7 +2075,7 @@ In&nbsp;[2]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The sample instance of a mushroom shown above can be represented as a string. A Python <em>string</em> (<a href="http://docs.python.org/2/tutorial/introduction.html#strings"><code>str</code></a>) is a sequence of 0 or more characters enclosed within a pair of single quotes (<code>'</code>) or a pair double quotes (<code>&quot;</code>).</p>
+<p>The sample instance of a mushroom shown above can be represented as a string. A Python <em>string</em> (<a href="http://docs.python.org/2/tutorial/introduction.html#strings"><strong><code>str</code></strong></a>) is a sequence of 0 or more characters enclosed within a pair of single quotes (<code>'</code>) or a pair double quotes (<code>&quot;</code>).</p>
 </div>
 </div>
 </div>
@@ -2143,7 +2143,7 @@ In&nbsp;[4]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="https://docs.python.org/3/library/functions.html#print"><strong><code>print</code></strong></a> function writes the value of its comma-delimited arguments to <a href="http://docs.python.org/2/library/sys.html#sys.stdout"><code>sys.stdout</code></a> (typically the console). Each value in the output is separated by a single blank space. If an <code>end</code> argument that does not include <code>\n</code> (newline character) is supplied, the output cursor will not move to the next line.</p>
+<p>The <a href="https://docs.python.org/3/library/functions.html#print"><strong><code>print</code></strong></a> function writes the value of its comma-delimited arguments to <a href="http://docs.python.org/2/library/sys.html#sys.stdout"><strong><code>sys.stdout</code></strong></a> (typically the console). Each value in the output is separated by a single blank space. If an <strong><code>end</code></strong> argument that does not include <code>\n</code> (newline character) is supplied, the output cursor will not move to the next line.</p>
 </div>
 </div>
 </div>
@@ -2186,8 +2186,8 @@ A B C
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Python comment character is <code>'#'</code>: anything after <code>'#'</code> on the line is ignored by the Python interpreter.</p>
-<p>Pairs of triple quotes (<code>'''</code> or <code>&quot;&quot;&quot;</code>) can be used to delimit multi-line comments.</p>
+<p>The Python comment character is <strong><code>'#'</code></strong>: anything after <code>'#'</code> on the line is ignored by the Python interpreter.</p>
+<p>Pairs of triple quotes (<strong><code>'''</code></strong> or <strong><code>&quot;&quot;&quot;</code></strong>) can be used to delimit multi-line comments.</p>
 </div>
 </div>
 </div>
@@ -2231,7 +2231,7 @@ no comment
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A <a href="http://docs.python.org/2/tutorial/introduction.html#lists"><code>list</code></a> is an ordered sequence of 0 or more comma-delimited elements enclosed within square brackets ('<code>[</code>', '<code>]</code>'). The Python <a href="http://docs.python.org/2/library/stdtypes.html#str.split"><code>str.split(sep)</code></a> method can be used to split a <code>sep</code>-delimited string into a corresponding list of elements.</p>
+<p>A <a href="http://docs.python.org/2/tutorial/introduction.html#lists"><strong><code>list</code></strong></a> is an ordered sequence of 0 or more comma-delimited elements enclosed within square brackets ('<code>[</code>', '<code>]</code>'). The Python <a href="http://docs.python.org/2/library/stdtypes.html#str.split"><strong><code>str.split(sep)</code></strong></a> method can be used to split a <code>sep</code>-delimited string into a corresponding list of elements.</p>
 </div>
 </div>
 </div>
@@ -2679,7 +2679,7 @@ In&nbsp;[16]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2/library/stdtypes.html#str.strip"><code>str.strip(\[chars\]</code>)</a> method returns a copy of <code>str</code> in which any leading or trailing <code>chars</code> are removed. If no <code>chars</code> are specified, it removes all leading and trailing whitespace. [<em>Whitespace</em> is any sequence of spaces, tabs (<code>'\t'</code>) and/or newline (<code>'\n'</code>) characters.]</p>
+<p>The <a href="http://docs.python.org/2/library/stdtypes.html#str.strip"><strong><code>str.strip(\[chars\]</code></strong>)</a> method returns a copy of <code>str</code> in which any leading or trailing <code>chars</code> are removed. If no <code>chars</code> are specified, it removes all leading and trailing whitespace. [<em>Whitespace</em> is any sequence of spaces, tabs (<code>'\t'</code>) and/or newline (<code>'\n'</code>) characters.]</p>
 <p>Note that since a blank space is inserted in the output after every item in a comma-delimited list, the last asterisk is printed after a leading blank space is inserted on the new line.</p>
 </div>
 </div>
@@ -2800,7 +2800,7 @@ In&nbsp;[19]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2/library/string.html#string.join"><code>str.join(words)</code></a> method is the inverse of <code>str.split()</code>, returning a single string in which each string in the sequence of <code>words</code> is separated by <code>str</code>.</p>
+<p>The <a href="http://docs.python.org/2/library/string.html#string.join"><strong><code>str.join(words)</code></strong></a> method is the inverse of <code>str.split()</code>, returning a single string in which each string in the sequence of <code>words</code> is separated by <code>str</code>.</p>
 </div>
 </div>
 </div>
@@ -2841,7 +2841,7 @@ In&nbsp;[20]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A number of Python methods can be used on strings, lists and other sequences.</p>
-<p>The <a href="http://docs.python.org/2/library/functions.html#len"><code>len(s)</code></a> function can be used to find the length of (number of items in) a sequence <code>s</code>. It will also return the number of items in a <em>dictionary</em>, a data structure we will cover further below.</p>
+<p>The <a href="http://docs.python.org/2/library/functions.html#len"><strong><code>len(s)</code></strong></a> function can be used to find the length of (number of items in) a sequence <code>s</code>. It will also return the number of items in a <em>dictionary</em>, a data structure we will cover further below.</p>
 </div>
 </div>
 </div>
@@ -2922,7 +2922,7 @@ True False
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2/library/stdtypes.html#str.count"><code>s.count(x)</code></a> ormethod can be used to count the number of occurrences of item <code>x</code> in sequence <code>s</code>.</p>
+<p>The <a href="http://docs.python.org/2/library/stdtypes.html#str.count"><strong><code>s.count(x)</code></strong></a> ormethod can be used to count the number of occurrences of item <code>x</code> in sequence <code>s</code>.</p>
 </div>
 </div>
 </div>
@@ -2962,7 +2962,7 @@ In&nbsp;[23]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2/library/stdtypes.html#str.index"><code>s.index(x)</code></a> method can be used to find the first 0-based index of item <code>x</code> in sequence <code>s</code>.</p>
+<p>The <a href="http://docs.python.org/2/library/stdtypes.html#str.index"><strong><code>s.index(x)</code></strong></a> method can be used to find the first 0-based index of item <code>x</code> in sequence <code>s</code>.</p>
 </div>
 </div>
 </div>
@@ -3350,7 +3350,7 @@ bruises is not in [&apos;class&apos;, &apos;cap-shape&apos;, &apos;cap-surface&a
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another perspective on handling errors championed by some pythonistas is that it is <a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#eafp-vs-lbyl"><em>easier to ask forgiveness than permission (EAFP)</em></a>.</p>
 <p>As in many practical applications of philosophy, religion or dogma, it is helpful to <em>think before you choose (TBYC)</em>. There are a number of factors to consider in deciding whether to follow the EAFP or LBYL paradigm, including code readability and the anticipated likelihood and relative severity of encountering an exception. Oran Looney wrote a blog post providing a nice overview of the debate over <a href="http://oranlooney.com/lbyl-vs-eafp/">LBYL vs. EAFP</a>.</p>
-<p>We will follow the LBYL paradigm throughout most of this primer. However, as an illustration of EAFP in Python, here is an alternate implementation of the functionality of the code above, using a <a href="http://docs.python.org/2/tutorial/errors.html#handling-exceptions"><code>try/except</code></a> statement.</p>
+<p>We will follow the LBYL paradigm throughout most of this primer. However, as an illustration of EAFP in Python, here is an alternate implementation of the functionality of the code above, using a <a href="http://docs.python.org/2/tutorial/errors.html#handling-exceptions"><strong><code>try/except</code></strong></a> statement.</p>
 </div>
 </div>
 </div>
@@ -3527,7 +3527,7 @@ cap-shape = k
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that Python does not distinguish between names used for <em>variables</em> and names used for <em>functions</em>. An assignment statement binds a value to a name; a function definition also binds a value to a name. At any given time, the value most recently bound to a name is the one that is used.</p>
-<p>The <a href="http://docs.python.org/2.7/library/functions.html#type"><code>type(object)</code></a> function returns the <code>type</code> of <code>object</code>.</p>
+<p>The <a href="http://docs.python.org/2.7/library/functions.html#type"><strong><code>type(object)</code></strong></a> function returns the <code>type</code> of <code>object</code>.</p>
 </div>
 </div>
 </div>
@@ -3559,7 +3559,7 @@ In&nbsp;[36]:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 x used as a variable: 0 &lt;type &apos;int&apos;&gt;
-x used as a function: &lt;function x at 0x104e44578&gt; &lt;type &apos;function&apos;&gt;
+x used as a function: &lt;function x at 0x1050076e0&gt; &lt;type &apos;function&apos;&gt;
 
 </pre>
 </div>
@@ -3574,7 +3574,7 @@ x used as a function: &lt;function x at 0x104e44578&gt; &lt;type &apos;function&
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Another way to determine the <code>type</code> of an object is to use <a href="https://docs.python.org/2/library/functions.html#isinstance"><code>isinstance(object, class)</code></a>. This is generally <a href="http://stackoverflow.com/questions/1549801/differences-between-isinstance-and-type-in-python">preferable</a>, as it takes into account <a href="https://docs.python.org/2/tutorial/classes.html#inheritance">class inheritance</a>. There is a larger issue of <a href="https://en.wikipedia.org/wiki/Duck_typing"><em>duck typing</em></a>, and whether code should ever explicitly check for the type of an object, but we will omit further discussion of the topic in this notebook.</p>
+<p>Another way to determine the <code>type</code> of an object is to use <a href="https://docs.python.org/2/library/functions.html#isinstance"><strong><code>isinstance(object, class)</code></strong></a>. This is generally <a href="http://stackoverflow.com/questions/1549801/differences-between-isinstance-and-type-in-python">preferable</a>, as it takes into account <a href="https://docs.python.org/2/tutorial/classes.html#inheritance">class inheritance</a>. There is a larger issue of <a href="https://en.wikipedia.org/wiki/Duck_typing"><em>duck typing</em></a>, and whether code should ever explicitly check for the type of an object, but we will omit further discussion of the topic in this notebook.</p>
 <p>Checking whether an object is a <code>function</code> type will require the use of the <code>types</code> library ... and more <a href="http://stackoverflow.com/questions/624926/how-to-detect-whether-a-python-variable-is-a-function/624948#624948">thorough checking</a> could be done if one wants to include built-in as well as user-defined functions.</p>
 </div>
 </div>
@@ -3809,7 +3809,6 @@ min and max of [3, 1, 4, 2, 5] : 1 , 5
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <a href="http://docs.python.org/2/tutorial/controlflow.html#for-statements"><strong><code>for</code></strong></a> statement iterates over the elements of a sequence.</p>
-<p>The <a href="http://docs.python.org/2/tutorial/controlflow.html#the-range-function"><code>range(stop)</code></a> function returns a list of values from 0 up to <code>stop - 1</code> (inclusive).</p>
 </div>
 </div>
 </div>
@@ -3820,9 +3819,84 @@ In&nbsp;[41]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&#39;Index values for attributes:&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span> <span class="c"># 2 newlines</span>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&#39;Values for the&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">),</span> <span class="s">&#39;attributes:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span>
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+0
+1
+2
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[42]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s">&#39;abc&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+a
+b
+c
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Python 2, the <a href="http://docs.python.org/2/tutorial/controlflow.html#the-range-function"><strong><code>range(stop)</code></strong></a> function returns a list of values from 0 up to <code>stop - 1</code> (inclusive). It is often used in the context of a <code>for</code> loop that iterates over the list of values.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[43]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&#39;Values for the&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">),</span> <span class="s">&#39;attributes:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">)):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&#39;=&#39;</span><span class="p">,</span> 
           <span class="n">attribute_value</span><span class="p">(</span><span class="n">single_instance_list</span><span class="p">,</span> <span class="n">attribute_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">attribute_names</span><span class="p">))</span>
@@ -3839,8 +3913,6 @@ In&nbsp;[41]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Index values for attributes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
-
 Values for the 23 attributes:
 
 class = p
@@ -3880,20 +3952,19 @@ habitat = d
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The more general form of the function, <a href="http://docs.python.org/2/library/functions.html#range"><code>range(start, stop[, step])</code></a>, returns a list of values from <code>start</code> to <code>stop - 1</code> (inclusive) increasing by <code>step</code> (which defaults to <code>1</code>), or from <code>start</code> down to <code>stop + 1</code> (inclusive) decreasing by <code>step</code> if <code>step</code> is negative.</p>
+<p>The more general form of the function, <a href="http://docs.python.org/2/library/functions.html#range"><strong><code>range(start, stop[, step])</code></strong></a>, returns a list of values from <code>start</code> to <code>stop - 1</code> (inclusive) increasing by <code>step</code> (which defaults to <code>1</code>), or from <code>start</code> down to <code>stop + 1</code> (inclusive) decreasing by <code>step</code> if <code>step</code> is negative.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[42]:
+In&nbsp;[44]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&#39;range(5, 10):&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&#39;range(10, 5, -1):&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&#39;range(0, 10, 2):&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3907,9 +3978,9 @@ In&nbsp;[42]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-range(5, 10): [5, 6, 7, 8, 9]
-range(10, 5, -1): [10, 9, 8, 7, 6]
-range(0, 10, 2): [0, 2, 4, 6, 8]
+3
+2
+1
 
 </pre>
 </div>
@@ -3924,72 +3995,11 @@ range(0, 10, 2): [0, 2, 4, 6, 8]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2/library/functions.html#xrange"><code>xrange(stop[, stop[, step]])</code></a> function is an <a href="http://docs.python.org/2/glossary.html#term-iterable"><em>iterable</em></a> version of the <code>range()</code> function. In the context of a <code>for</code> loop, it returns the <em>next</em> item of the sequence for each iteration of the loop rather than creating <em>all</em> the elements of the sequence before the first iteration. This can reduce memory consumption in cases where iteration over all the items is not required.</p>
-<p>The <code>range()</code> function returns a list, which can then be manipulated by any list or sequence methods. An <em>xrange object</em> can only be used in a <code>for</code> loop or the <code>len()</code> function. A related and slightly more general class of container objects, <a href="http://docs.python.org/2/library/stdtypes.html#typeiter"><em>iterators</em></a>, include a <a href="http://docs.python.org/2/library/stdtypes.html#iterator.next"><code>next()</code></a> method for explicitly returning the next item in the container.</p>
+<p>In Python 2, the <a href="http://docs.python.org/2/library/functions.html#xrange"><strong><code>xrange(stop[, stop[, step]])</code></strong></a> function is an <a href="http://docs.python.org/2/glossary.html#term-iterable"><em>iterable</em></a> version of the <code>range()</code> function. In the context of a <code>for</code> loop, it returns the <em>next</em> item of the sequence for each iteration of the loop rather than creating <em>all</em> the elements of the sequence before the first iteration. This can reduce memory consumption in cases where iteration over all the items is not required.</p>
+<p>In Python 3, the <code>range()</code> function behaves the same way as the <code>xrange()</code> function does in Python 2, and so the <code>xrange()</code> function is not defined in Python 3.</p>
+<p>To maximize compatibility, we will use <code>range()</code> throughout this notebook; however, note that it is generally advisable to use <code>xrange()</code> rather than <code>range()</code> wherever possible in Python 2.</p>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[43]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span> <span class="c"># prints the string representation of the object</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">&#39;Values for the&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">),</span> <span class="s">&#39;attributes:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">attribute_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&#39;=&#39;</span><span class="p">,</span> 
-          <span class="n">attribute_value</span><span class="p">(</span><span class="n">single_instance_list</span><span class="p">,</span> <span class="n">attribute_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">attribute_names</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-xrange(23)
-
-Values for the 23 attributes:
-
-class = p
-cap-shape = k
-cap-surface = f
-cap-color = n
-bruises? = f
-odor = n
-gill-attachment = f
-gill-spacing = c
-gill-size = n
-gill-color = w
-stalk-shape = e
-stalk-root = ?
-stalk-surface-above-ring = k
-stalk-surface-below-ring = y
-stalk-color-above-ring = w
-stalk-color-below-ring = n
-veil-type = p
-veil-color = w
-ring-number = o
-ring-type = e
-spore-print-color = w
-population = v
-habitat = d
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -4006,8 +4016,8 @@ habitat = d
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A Python <a href="http://docs.python.org/2/tutorial/modules.html"><strong><em>module</em></strong></a> is a file containing related definitions (e.g., of functions and variables). Modules are used to help organize the Python <a href="http://docs.python.org/2/tutorial/classes.html#python-scopes-and-namespaces"><strong><em>namespaces</em></strong></a>, the set of identifiers accessible in a particular contexts. All of the functions and variables we define in this IPython Notebook are in the <code>__main__</code> namespace, so accessing them does not require any specification of a module.</p>
-<p>A Python module named <code>simple_ml</code> (in the file <code>simple_ml.py</code>), contains a set of solutions to the exercises in this IPython Notebook. Accessing functions in that module requires that we first <a href="http://docs.python.org/2/reference/simple_stmts.html#the-import-statement"><code>import</code></a> the module, and then prefix the function names with the module name followed by a dot (this is known as <strong><em>dotted notation</em></strong>).</p>
+<p>A Python <a href="http://docs.python.org/2/tutorial/modules.html"><em>module</em></a> is a file containing related definitions (e.g., of functions and variables). Modules are used to help organize the Python <a href="http://docs.python.org/2/tutorial/classes.html#python-scopes-and-namespaces"><em>namespaces</em></a>, the set of identifiers accessible in a particular contexts. All of the functions and variables we define in this IPython Notebook are in the <code>__main__</code> namespace, so accessing them does not require any specification of a module.</p>
+<p>A Python module named <code>simple_ml</code> (in the file <code>simple_ml.py</code>), contains a set of solutions to the exercises in this IPython Notebook. Accessing functions in that module requires that we first <a href="http://docs.python.org/2/reference/simple_stmts.html#the-import-statement"><code>import</code></a> the module, and then prefix the function names with the module name followed by a dot (this is known as <em>dotted notation</em>).</p>
 <p>For example, the following function call Exercise 1 below:</p>
 <p><code>simple_ml.print_attribute_names_and_values(single_instance_list, attribute_names)</code></p>
 <p>uses dotted notation to reference the <code>print_attribute_names_and_values()</code> function in the <code>simple_ml</code> module.</p>
@@ -4039,7 +4049,7 @@ habitat = d
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[44]:
+In&nbsp;[45]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4127,7 +4137,7 @@ habitat = d
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[45]:
+In&nbsp;[46]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4186,7 +4196,7 @@ First instance: [&apos;p&apos;, &apos;x&apos;, &apos;s&apos;, &apos;n&apos;, &ap
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[46]:
+In&nbsp;[47]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4233,7 +4243,7 @@ First instance: [&apos;p&apos;, &apos;x&apos;, &apos;s&apos;, &apos;n&apos;, &ap
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Output to text file is usually done via <a href="http://docs.python.org/2/library/stdtypes.html#file.write"><code>file.write(str)</code></a> method.</p>
+<p>Output to text file is usually done via <a href="http://docs.python.org/2/library/stdtypes.html#file.write"><strong><code>file.write(str)</code></strong></a> method.</p>
 <p>As we saw earlier, the <a href="http://docs.python.org/2/library/stdtypes.html#str.join"><code>str.join(words)</code></a> method returns a single <code>str</code>-delimited string containing each of the strings in the list <code>words</code>.</p>
 <p>SQL and Hive database tables often use the pipe ('|') delimiter to separate column values for each row when they are stored as flat files. The following code creates a new data file using pipes rather than commas to separate the attribute values.</p>
 <p>To help maintain internal consistency, it is generally a good practice to define a variable such as <code>delimiter</code> or <code>separator</code> and bind it to the intended delimiter string, and then use the variable throughout.</p>
@@ -4243,7 +4253,7 @@ First instance: [&apos;p&apos;, &apos;x&apos;, &apos;s&apos;, &apos;n&apos;, &ap
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[47]:
+In&nbsp;[48]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4304,55 +4314,8 @@ First instance: [&apos;p&apos;, &apos;x&apos;, &apos;s&apos;, &apos;n&apos;, &ap
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python provides a powerful <a href="http://docs.python.org/2/tutorial/datastructures.html#list-comprehensions"><em>list comprehension</em></a> construct to simplify the creation of a list by specifying a formula in a single expression.</p>
 <p>Some programmers find list comprehensions confusing, and avoid their use. We won't rely on list comprehensions here, but will show examples with and without list comprehensions below.</p>
-<p>One common use of list comprehensions is in the context of the <a href="http://docs.python.org/2/library/string.html#string.join">str.join(words)</a> method we saw earlier.</p>
+<p>One common use of list comprehensions is in the context of the <a href="http://docs.python.org/2/library/string.html#string.join"><code>str.join(words)</code></a> method we saw earlier.</p>
 <p>If we wanted to construct a pipe-delimited string containing elements of the list, we could use a <code>for</code> loop to iteratively add list elements and pipe delimiters to a string. We would thereby add one pipe delimiter too many, and would thus have to shave that off at the end.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[48]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="n">delimited_string</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
-    <span class="n">delimited_string</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">delimiter</span>
-<span class="n">delimited_string</span> <span class="o">=</span> <span class="n">delimited_string</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">delimited_string</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">
-    Out[48]:</div>
-
-
-<div class="output_text output_subarea output_pyout">
-<pre>
-&apos;1|2|3&apos;
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This process is much simpler using a list comprehension.</p>
 </div>
 </div>
 </div>
@@ -4363,7 +4326,11 @@ In&nbsp;[49]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<div class="highlight"><pre><span class="n">delimited_string</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="n">delimited_string</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">delimiter</span>
+<span class="n">delimited_string</span> <span class="o">=</span> <span class="n">delimited_string</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">delimited_string</span>
 </pre></div>
 
 </div>
@@ -4395,6 +4362,49 @@ In&nbsp;[49]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>This process is much simpler using a list comprehension.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[50]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">delimiter</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[50]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+&apos;1|2|3&apos;
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>As noted in the initial description of the UCI mushroom set above, 2480 of the 8124 instances have missing values (denoted by <code>'?'</code>) for an attribute. There are several techniques for dealing with instances that include missing values, but to simplify things in the context of this primer - and following the example in the <a href="http://www.data-science-for-biz.com/">Data Science for Business</a> book - we will restrict our focus to only those <em>clean</em> instances that have no missing values.</p>
 <p>We could use several lines of code - with an <code>if</code> statement inside a <code>for</code> loop - to create a <code>clean_instances</code> list from the <code>all_instances</code> list. Or we could use a list comprehension.</p>
 <p>We will show both approaches to creating <code>clean_instances</code> below.</p>
@@ -4404,7 +4414,7 @@ In&nbsp;[49]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[50]:
+In&nbsp;[51]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4443,7 +4453,7 @@ In&nbsp;[50]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[51]:
+In&nbsp;[52]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4490,7 +4500,7 @@ In&nbsp;[51]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Although single character abbreviations of attribute values (e.g., 'x') allow for more compact data files, they are not as easy to understand by human readers as the longer attribute value descriptions (e.g., 'convex').</p>
-<p>A Python <a href="http://docs.python.org/2/tutorial/datastructures.html#dictionaries">dictionary (or <code>dict</code>)</a> is an unordered, comma-delimited collection of <em>key, value</em> pairs, serving a siimilar function as a hash table or hashmap in other programming languages.</p>
+<p>A Python <a href="http://docs.python.org/2/tutorial/datastructures.html#dictionaries">dictionary (or <strong><code>dict</code></strong>)</a> is an unordered, comma-delimited collection of <em>key, value</em> pairs, serving a siimilar function as a hash table or hashmap in other programming languages.</p>
 <p>We could create a dictionary for the <code>cap-type</code> attribute values shown above:</p>
 <blockquote>
 <p>bell=b, conical=c, convex=x, flat=f, knobbed=k, sunken=s</p>
@@ -4503,7 +4513,7 @@ In&nbsp;[51]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[52]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4552,7 +4562,7 @@ x = convex
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[53]:
+In&nbsp;[54]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4599,7 +4609,7 @@ x = convex
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[54]:
+In&nbsp;[55]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4647,7 +4657,7 @@ In&nbsp;[54]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[55]:
+In&nbsp;[56]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4733,7 +4743,7 @@ First attribute values list: {&apos;p&apos;: &apos;poisonous&apos;, &apos;e&apos
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[56]:
+In&nbsp;[57]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4808,7 +4818,7 @@ First attribute name: class ; values: {&apos;p&apos;: &apos;poisonous&apos;, &ap
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[57]:
+In&nbsp;[58]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4855,7 +4865,7 @@ There are 3488 edible mushrooms among the 5644 clean instances
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[58]:
+In&nbsp;[59]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4903,7 +4913,7 @@ x : 2840
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Python <a href="http://docs.python.org/2/library/collections.html"><code>collections</code></a> module provides a number of high performance container datatypes. A frequently useful datatype is a <a href="http://docs.python.org/2/library/collections.html#defaultdict-objects"><code>defaultdict</code></a>, which automatically creates an appropriate default value for a new key. For example, a <code>defaultdict(int)</code> automatically initializes a new dictionary entry to 0 (zero); a <code>defaultdict(list)</code> automatically initializes a new dictionary entry to the empty list (<code>[]</code>).</p>
+<p>The Python <a href="http://docs.python.org/2/library/collections.html"><strong><code>collections</code></strong></a> module provides a number of high performance container datatypes. A frequently useful datatype is a <a href="http://docs.python.org/2/library/collections.html#defaultdict-objects"><strong><code>defaultdict</code></strong></a>, which automatically creates an appropriate default value for a new key. For example, a <code>defaultdict(int)</code> automatically initializes a new dictionary entry to 0 (zero); a <code>defaultdict(list)</code> automatically initializes a new dictionary entry to the empty list (<code>[]</code>).</p>
 <p>After first importing <code>defaultdict</code> from <code>collections</code>, we can use <code>defaultdict(int)</code> to simplify the code above:</p>
 </div>
 </div>
@@ -4911,7 +4921,7 @@ x : 2840
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[59]:
+In&nbsp;[60]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -4976,7 +4986,7 @@ x : 2840
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[60]:
+In&nbsp;[61]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5034,14 +5044,14 @@ x : 2840
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Earlier, we saw that there is a <code>list.sort()</code> method that will sort a list in-place, i.e., by replacing the original value of <code>list</code> with a sorted version of the elements in <code>list</code>.</p>
-<p>The Python <a href="http://docs.python.org/2/library/functions.html#sorted"><code>sorted(iterable[, cmp[, key[, reverse]]])</code></a> function can be used to return a <em>copy</em> of a list, dictionary or any other <a href="http://docs.python.org/2/glossary.html#term-iterable"><em>iterable</em></a> container it is passed, in ascending order.</p>
+<p>The Python <a href="http://docs.python.org/2/library/functions.html#sorted"><strong><code>sorted(iterable[, cmp[, key[, reverse]]])</code></strong></a> function can be used to return a <em>copy</em> of a list, dictionary or any other <a href="http://docs.python.org/2/glossary.html#term-iterable"><em>iterable</em></a> container it is passed, in ascending order.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[61]:
+In&nbsp;[62]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5085,7 +5095,7 @@ In&nbsp;[61]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[62]:
+In&nbsp;[63]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5125,7 +5135,7 @@ In&nbsp;[62]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[63]:
+In&nbsp;[64]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5165,7 +5175,7 @@ In&nbsp;[63]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[64]:
+In&nbsp;[65]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5204,14 +5214,14 @@ x = convex
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An optional <a href="http://docs.python.org/2/tutorial/controlflow.html#keyword-arguments">keyword argument</a>, <code>reverse</code>, can be used to reverse the order of the sorted list returned by the function. The default value of this optional parameter is <code>False</code>, to get non-default behavior, we must specify the name and value of the argument: <code>reverse=True</code>.</p>
+<p>An optional <a href="http://docs.python.org/2/tutorial/controlflow.html#keyword-arguments">keyword argument</a>, <strong><code>reverse</code></strong>, can be used to reverse the order of the sorted list returned by the function. The default value of this optional parameter is <code>False</code>, to get non-default behavior, we must specify the name and value of the argument: <code>reverse=True</code>.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[65]:
+In&nbsp;[66]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5242,7 +5252,7 @@ In&nbsp;[65]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[66]:
+In&nbsp;[67]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5273,7 +5283,7 @@ In&nbsp;[66]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[67]:
+In&nbsp;[68]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5339,14 +5349,14 @@ x : 2840
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2/library/stdtypes.html#dict.items"><code>dict.items()</code></a> method returns an unordered list of <code>(key, value)</code> tuples in <code>dict</code>.</p>
+<p>The <a href="http://docs.python.org/2/library/stdtypes.html#dict.items"><strong><code>dict.items()</code></strong></a> method returns an unordered list of <code>(key, value)</code> tuples in <code>dict</code>.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[68]:
+In&nbsp;[69]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -5362,7 +5372,7 @@ In&nbsp;[68]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[68]:</div>
+    Out[69]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -5387,43 +5397,10 @@ In&nbsp;[68]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A related method, <a href="http://docs.python.org/2/library/stdtypes.html#dict.iteritems"><code>dict.iteritems()</code></a>, returns an <a href="http://docs.python.org/2/library/stdtypes.html#iterator-types"><code>iterator</code></a> - a callable object that returns the <em>next</em> item in a sequence each time it is referenced (e.g., during each iteration of a for loop), which can be more efficient than generating <em>all</em> the items in the sequence before any are used. This is similar to the distinction between <code>xrange()</code> and <code>range()</code> described above.</p>
+<p>In Python 2, a related method, <a href="http://docs.python.org/2/library/stdtypes.html#dict.iteritems"><strong><code>dict.iteritems()</code></strong></a>, returns an <a href="http://docs.python.org/2/library/stdtypes.html#iterator-types"><strong><code>iterator</code></strong></a>: a callable object that returns the <em>next</em> item in a sequence each time it is referenced (e.g., during each iteration of a for loop), which can be more efficient than generating <em>all</em> the items in the sequence before any are used ... and so should be used rather than <code>items()</code> wherever possible</p>
+<p>This is similar to the distinction between <code>xrange()</code> and <code>range()</code> described above ... and, also similarly, <code>dict.items()</code> is an <code>iterator</code> in Python 3 and so <code>dict.iteritems()</code> is no longer needed (nor defined) ... and further similarly, we will use only <code>dict.items()</code> in this notebook, but <code>dict.iteritems()</code> should be used wherever possible in Python 2.</p>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[69]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre><span class="n">attribute_values_cap_type</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">
-    Out[69]:</div>
-
-
-<div class="output_text output_subarea output_pyout">
-<pre>
-&lt;dictionary-itemiterator at 0x107481730&gt;
-</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -5432,7 +5409,7 @@ In&nbsp;[70]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">attribute_values_cap_type</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">attribute_values_cap_type</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
 
@@ -5467,10 +5444,10 @@ x : convex
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The Python <a href="http://docs.python.org/2/library/operator.html"><code>operator</code></a> module contains a number of functions that perform object comparisons, logical operations, mathematical operations, sequence operations, and abstract type tests.</p>
-<p>To facilitate sorting a dictionary by values, we will use the <a href="http://docs.python.org/2/library/operator.html#operator.itemgetter"><code>operator.itemgetter(item)</code></a> function that can be used to retrieve an indexed value (<code>item</code>) in a tuple (such as a <code>(key, value)</code> pair returned by <code>[iter]items()</code>).</p>
+<p>The Python <a href="http://docs.python.org/2/library/operator.html"><strong><code>operator</code></strong></a> module contains a number of functions that perform object comparisons, logical operations, mathematical operations, sequence operations, and abstract type tests.</p>
+<p>To facilitate sorting a dictionary by values, we will use the <a href="http://docs.python.org/2/library/operator.html#operator.itemgetter"><strong><code>operator.itemgetter(item)</code></strong></a> function that can be used to retrieve an indexed value (<code>item</code>) in a tuple (such as a <code>(key, value)</code> pair returned by <code>[iter]items()</code>).</p>
 <p>We can use <code>operator.itemgetter(1)</code>) to reference the value - the 2nd item in each <code>(key, value)</code> tuple, (at zero-based index position 1) - rather than the key - the first item in each <code>(key, value)</code> tuple (at index position 0).</p>
-<p>We will use the optional keyword argument <code>key</code> in <a href="http://docs.python.org/2/library/functions.html#sorted"><code>sorted(iterable[, cmp[, key[, reverse]]])</code></a> to specify a <em>sorting</em> key that is not the same as the <code>dict</code> key (the <code>dict</code> key is the default <em>sorting</em> key)</p>
+<p>We will use the optional keyword argument <strong><code>key</code></strong> in <a href="http://docs.python.org/2/library/functions.html#sorted"><code>sorted(iterable[, cmp[, key[, reverse]]])</code></a> to specify a <em>sorting</em> key that is not the same as the <code>dict</code> key (the <code>dict</code> key is the default <em>sorting</em> key)</p>
 </div>
 </div>
 </div>
@@ -5483,7 +5460,7 @@ In&nbsp;[71]:
     <div class="input_area">
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">operator</span>
 
-<span class="nb">sorted</span><span class="p">(</span><span class="n">attribute_values_cap_type</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">attribute_values_cap_type</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -5535,7 +5512,7 @@ In&nbsp;[72]:
 <span class="n">value_counts</span> <span class="o">=</span> <span class="n">simple_ml</span><span class="o">.</span><span class="n">attribute_value_counts</span><span class="p">(</span><span class="n">clean_instances</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">attribute_names</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">&#39;Counts for each value of&#39;</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="s">&#39;(sorted by count):&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">value_counts</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">value_counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
 </pre></div>
 
@@ -6215,7 +6192,7 @@ Information gain for different attributes:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In building a decision tree, we will need to split the instances based on the index of the <em>best</em> attribute, i.e., the attribute that offers the <em>highest information gain</em>. We will use separate utility functions to handle these subtasks. To simplify the functions, we will rely exclusively on attribute indexes rather than attribute names.</p>
 <p><strong><em>Note:</em></strong> the algorithm above is <em>recursive</em>, i.e., the there is a recursive call to <code>ID3</code> within the definition of <code>ID3</code>. Covering recursion is beyond the scope of this primer, but there are a number of other resources on <a href="https://www.google.com/search?q=python+recursion">using recursion in Python</a>. Familiarity with recursion will be important for understanding both the tree construction and classification functions below.</p>
-<p>First, we will define a function to split a set of instances based on any attribute. This function will return a dictionary where the <em>key</em> of each dictionary is a distinct value of the specified <code>attribute_index</code>, and the <em>value</em> of each dictionary is a list representing the subset of <code>instances</code> that have that attribute value.</p>
+<p>First, we will define a function, <strong><code>split_instances(instances, attribute_index)</code></strong>, to split a set of instances based on any attribute. This function will return a dictionary where the <em>key</em> of each dictionary is a distinct value of the specified <code>attribute_index</code>, and the <em>value</em> of each dictionary is a list representing the subset of <code>instances</code> that have that attribute value.</p>
 </div>
 </div>
 </div>
@@ -6331,8 +6308,8 @@ Best attribute index: 5
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A leaf node in a decision tree represents the most frequently occurring - or majority - class value for that path through the tree. We will need a function that determines the majority value for the class index among a set of instances.</p>
 <p>We earlier saw how the <a href="http://docs.python.org/2/library/collections.html#collections.defaultdict"><code>defaultdict</code></a> container in the <a href="http://docs.python.org/2/library/collections.html"><code>collections</code></a> module can be used to simplify the construction of a dictionary containing the counts of all attribute values for all attributes, by automatically setting the count for any attribute value to zero when the attribute value is first added to the dictionary.</p>
-<p>The <code>collections</code> module has another useful container, a <a href="http://docs.python.org/2/library/collections.html#collections.Counter"><code>Counter</code></a> class, that can further simplify the construction of a specialized dictionary of counts. When a <code>Counter</code> object is instantiated with a list of items, it returns a dictionary-like container in which the <em>keys</em> are the unique items in the list, and the <em>values</em> are the counts of each unique item in that list.</p>
-<p>This container has an additional method, <a href="http://docs.python.org/2/library/collections.html#collections.Counter.most_common"><code>most_common([n])</code></a>, which returns a list of 2-element tuples representing the values and their associated counts for the most common <code>n</code> values; if <code>n</code> is omitted, the method returns all tuples.</p>
+<p>The <code>collections</code> module has another useful container, a <a href="http://docs.python.org/2/library/collections.html#collections.Counter"><strong><code>Counter</code></strong></a> class, that can further simplify the construction of a specialized dictionary of counts. When a <code>Counter</code> object is instantiated with a list of items, it returns a dictionary-like container in which the <em>keys</em> are the unique items in the list, and the <em>values</em> are the counts of each unique item in that list.</p>
+<p>This container has an additional method, <a href="http://docs.python.org/2/library/collections.html#collections.Counter.most_common"><strong><code>most_common([n])</code></strong></a>, which returns a list of 2-element tuples representing the values and their associated counts for the most common <code>n</code> values; if <code>n</code> is omitted, the method returns all tuples.</p>
 <p>The following is an example of how we can use a <code>Counter</code> to represent the frequency of different class labels, and how we can identify the most frequent value and its count.</p>
 </div>
 </div>
@@ -6684,8 +6661,8 @@ In&nbsp;[89]:
     
     <span class="c"># if no candidate_attribute_indexes are provided, assume that we will use all but the target_attribute_index</span>
     <span class="k">if</span> <span class="n">candidate_attribute_indexes</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="n">candidate_attribute_indexes</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-        <span class="n">candidate_attribute_indexes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">class_index</span><span class="p">)</span>
+        <span class="n">candidate_attribute_indexes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">class_index</span><span class="p">]</span>
+        <span class="c">#candidate_attribute_indexes.remove(class_index)</span>
         
     <span class="n">class_labels_and_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="n">instance</span><span class="p">[</span><span class="n">class_index</span><span class="p">]</span> <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">])</span>
 
@@ -6805,8 +6782,8 @@ In&nbsp;[89]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The structure of the tree shown above is rather difficult to discern from the normal printed representation of a dictionary.</p>
-<p>The Python <a href="http://docs.python.org/2/library/pprint.html"><code>pprint</code></a> module has a number of useful methods for pretty-printing or formatting objects in a more human readable way.</p>
-<p>The <a href="http://docs.python.org/2/library/pprint.html#pprint.pprint"><code>pprint.pprint(object, stream=None, indent=1, width=80, depth=None)</code></a> method will print <code>object</code> to a <code>stream</code> (a default value of <code>None</code> will dictate the use of <a href="http://docs.python.org/2/library/sys.html#sys.stdout">sys.stdout</a>, the same destination as <code>print</code> statement output), using <code>indent</code> spaces to differentiate nesting levels, using up to a maximum <code>width</code> columns and up to to a maximum nesting level <code>depth</code> (<code>None</code> indicating no maximum).</p>
+<p>The Python <a href="http://docs.python.org/2/library/pprint.html"><strong><code>pprint</code></strong></a> module has a number of useful methods for pretty-printing or formatting objects in a more human readable way.</p>
+<p>The <a href="http://docs.python.org/2/library/pprint.html#pprint.pprint"><strong><code>pprint.pprint(object, stream=None, indent=1, width=80, depth=None)</code></strong></a> method will print <code>object</code> to a <code>stream</code> (a default value of <code>None</code> will dictate the use of <a href="http://docs.python.org/2/library/sys.html#sys.stdout">sys.stdout</a>, the same destination as <code>print</code> function output), using <code>indent</code> spaces to differentiate nesting levels, using up to a maximum <code>width</code> columns and up to to a maximum nesting level <code>depth</code> (<code>None</code> indicating no maximum).</p>
 <p>We will use the a variation on the import statement that imports one or more functions into the current namespace:</p>
 <pre><code>from pprint import pprint</code></pre>
 <p>This will to enable us to use <code>pprint()</code> rather than having to use dotted notation, i.e., <code>pprint.pprint()</code>.</p>
@@ -6874,7 +6851,7 @@ In&nbsp;[90]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Usually, when we construct a decision tree based on a set of <em>training</em> instances, we do so with the intent of using that tree to classify a set of one or more <em>testing</em> instances.</p>
-<p>We will define a function, <code>classify(tree, instance, default_class=None)</code>, to use a decision <code>tree</code> to classify a single <code>instance</code>, where an optional <code>default_class</code> can be specified as the return value if the instance represents a set of attribute values that don't have a representation in the decision tree.</p>
+<p>We will define a function, <strong><code>classify(tree, instance, default_class=None)</code></strong>, to use a decision <code>tree</code> to classify a single <code>instance</code>, where an optional <code>default_class</code> can be specified as the return value if the instance represents a set of attribute values that don't have a representation in the decision tree.</p>
 <p>We will use a design pattern in which we will use a series of <code>if</code> statements, each of which returns a value if the condition is true, rather than a nested series of <code>if</code>, <code>elif</code> and/or <code>else</code> clauses, as it helps constrain the levels of indentation in the function.</p>
 </div>
 </div>
@@ -6892,8 +6869,8 @@ In&nbsp;[91]:
         <span class="k">return</span> <span class="n">default_class</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span> 
         <span class="k">return</span> <span class="n">tree</span>
-    <span class="n">attribute_index</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">attribute_values</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">attribute_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># using list(dict.keys()) for Python 3 compatibility</span>
+    <span class="n">attribute_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">instance_attribute_value</span> <span class="o">=</span> <span class="n">instance</span><span class="p">[</span><span class="n">attribute_index</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">instance_attribute_value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">attribute_values</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">default_class</span>
@@ -6978,7 +6955,7 @@ In&nbsp;[92]:
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">classification_accuracy</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">testing_instances</span><span class="p">,</span> <span class="n">class_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">default_class</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Returns the accuracy of classifying testing_instances with tree, where the class label is in position class_index&#39;&#39;&#39;</span>
     <span class="n">num_correct</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_instances</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_instances</span><span class="p">)):</span>
         <span class="n">prediction</span> <span class="o">=</span> <span class="n">classify</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">testing_instances</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">default_class</span><span class="p">)</span>
         <span class="n">actual_value</span> <span class="o">=</span> <span class="n">testing_instances</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">class_index</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="n">actual_value</span><span class="p">:</span>
@@ -7014,7 +6991,7 @@ In&nbsp;[92]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2.7/library/functions.html#zip"><code>zip([iterable, ...])</code></a> function combines 2 or more sequences or iterables; the function returns a list of tuples, where the <em>i</em>th tuple contains the <em>i</em>th element from each of the argument sequences or iterables.</p>
+<p>The <a href="http://docs.python.org/2.7/library/functions.html#zip"><strong><code>zip([iterable, ...])</code></strong></a> function combines 2 or more sequences or iterables; the function returns a list of tuples, where the <em>i</em>th tuple contains the <em>i</em>th element from each of the argument sequences or iterables.</p>
 </div>
 </div>
 </div>
@@ -7110,7 +7087,7 @@ In&nbsp;[94]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We sometimes want to partition the instances into subsets of equal sizes to measure performance. One metric this partitioning allows us to compute is a <a href="https://en.wikipedia.org/wiki/Learning_curve">learning curve</a>, i.e., assess how well the model performs based on the size of its training set. Another use of these partitions (aka <em>folds</em>) would be to conduct an <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)"><em>n-fold cross validation</em></a> evaluation.</p>
-<p>The following function, <code>partition_instances(instances, num_partitions)</code>, partitions a set of <code>instances</code> into <code>num_partitions</code> relatively equally sized subsets.</p>
+<p>The following function, <strong><code>partition_instances(instances, num_partitions)</code></strong>, partitions a set of <code>instances</code> into <code>num_partitions</code> relatively equally sized subsets.</p>
 <p>We'll use this as yet another opportunity to demonstrate the power of using list comprehensions, this time, to condense the use of nested <code>for</code> loops.</p>
 </div>
 </div>
@@ -7124,8 +7101,8 @@ In&nbsp;[95]:
     <div class="input_area">
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">partition_instances</span><span class="p">(</span><span class="n">instances</span><span class="p">,</span> <span class="n">num_partitions</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Returns a list of relatively equally sized disjoint sublists (partitions) of the list of instances&#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="p">[[</span><span class="n">instances</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">),</span> <span class="n">num_partitions</span><span class="p">)]</span> \
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">instances</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">),</span> <span class="n">num_partitions</span><span class="p">)]</span> \
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">)]</span>
 </pre></div>
 
 </div>
@@ -7152,7 +7129,7 @@ In&nbsp;[96]:
 <div class="highlight"><pre><span class="n">instance_length</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">num_instances</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="n">simplified_instances</span> <span class="o">=</span> <span class="p">[[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">instance_length</span> <span class="o">+</span> <span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_instances</span><span class="p">)]</span>
+<span class="n">simplified_instances</span> <span class="o">=</span> <span class="p">[[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">instance_length</span> <span class="o">+</span> <span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_instances</span><span class="p">)]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">&#39;Instances:&#39;</span><span class="p">,</span> <span class="n">simplified_instances</span><span class="p">)</span>
 <span class="n">partitions</span> <span class="o">=</span> <span class="n">partition_instances</span><span class="p">(</span><span class="n">simplified_instances</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -7200,18 +7177,18 @@ In&nbsp;[97]:
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">partition_instances</span><span class="p">(</span><span class="n">instances</span><span class="p">,</span> <span class="n">num_partitions</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Returns a list of relatively equally sized disjoint sublists (partitions) of the list of instances&#39;&#39;&#39;</span>
     <span class="n">partitions</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_partitions</span><span class="p">):</span>
         <span class="n">partition</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c"># iterate over instances starting at position i in increments of num_paritions</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">),</span> <span class="n">num_partitions</span><span class="p">):</span> 
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">instances</span><span class="p">),</span> <span class="n">num_partitions</span><span class="p">):</span> 
             <span class="n">partition</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">instances</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="n">partitions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">partitions</span>
 
 <span class="n">simplified_instances</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_instances</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_instances</span><span class="p">):</span>
     <span class="n">new_instance</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">instance_length</span> <span class="o">+</span> <span class="n">i</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">instance_length</span> <span class="o">+</span> <span class="n">i</span><span class="p">):</span>
         <span class="n">new_instance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
     <span class="n">simplified_instances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_instance</span><span class="p">)</span>
 
@@ -7247,7 +7224,7 @@ Partitions: [[[0, 1, 2], [2, 3, 4], [4, 5, 6]], [[1, 2, 3], [3, 4, 5]]]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <a href="http://docs.python.org/2.7/library/functions.html#enumerate"><code>enumerate(sequence, start=0)</code></a> function creates an iterator that successively returns the index and value of each element in a <code>sequence</code>, beginning at the <code>start</code> index.</p>
+<p>The <a href="http://docs.python.org/2.7/library/functions.html#enumerate"><strong><code>enumerate(sequence, start=0)</code></strong></a> function creates an iterator that successively returns the index and value of each element in a <code>sequence</code>, beginning at the <code>start</code> index.</p>
 </div>
 </div>
 </div>
@@ -7301,7 +7278,7 @@ In&nbsp;[99]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s"># partitions:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">partition</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">partition_instances</span><span class="p">(</span><span class="n">simplified_instances</span><span class="p">,</span> <span class="n">i</span><span class="p">)):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">&#39;partition {}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">partition</span><span class="p">))</span>
@@ -7530,7 +7507,7 @@ Tree trained with 5644 instances:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we can partition our instances into subsets, we can use these subsets to construct different-sized training sets in the process of computing a learning curve.</p>
 <p>We will start off with an initial training set consisting only of the first partition, and then progressively extend that training set by adding a new partition during each iteration of computing the learning curve.</p>
-<p>The <a href="http://docs.python.org/2/tutorial/datastructures.html#more-on-lists"><code>list.extend(L)</code></a> method enables us to extend <code>list</code> by appending all the items in another list, <code>L</code>, to the end of <code>list</code>.</p>
+<p>The <a href="http://docs.python.org/2/tutorial/datastructures.html#more-on-lists"><strong><code>list.extend(L)</code></strong></a> method enables us to extend <code>list</code> by appending all the items in another list, <code>L</code>, to the end of <code>list</code>.</p>
 </div>
 </div>
 </div>
@@ -7572,7 +7549,7 @@ In&nbsp;[103]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now define the function, <code>compute_learning_curve(instances, num_partitions=10)</code>, that will take a list of <code>instances</code>, partition it into <code>num_partitions</code> relatively equally sized disjoint partitions, and then iteratively evaluate the accuracy of models trained with an incrementally increasing combination of instances in the first <code>num_partitions - 1</code> partitions then tested with instances in the last partition. That is, a model trained with the first partition will be constructed (and tested), then a model trained with the first 2 partitions will be constructed (and tested), and so on.</p>
+<p>We can now define the function, <strong><code>compute_learning_curve(instances, num_partitions=10)</code></strong>, that will take a list of <code>instances</code>, partition it into <code>num_partitions</code> relatively equally sized disjoint partitions, and then iteratively evaluate the accuracy of models trained with an incrementally increasing combination of instances in the first <code>num_partitions - 1</code> partitions then tested with instances in the last partition. That is, a model trained with the first partition will be constructed (and tested), then a model trained with the first 2 partitions will be constructed (and tested), and so on.</p>
 <p>The function will return a list of <code>num_partitions - 1</code> tuples representing the size of the training set and the accuracy of a tree trained with that set (and tested on the <code>num_partitions - 1</code> set). This will provide some indication of the relative impact of the size of the training set on model performance.</p>
 </div>
 </div>
@@ -7597,7 +7574,7 @@ In&nbsp;[104]:
     <span class="n">testing_instances</span> <span class="o">=</span> <span class="n">partitions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][:]</span>
     <span class="n">training_instances</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">accuracy_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_partitions</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_partitions</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
         <span class="c"># for each iteration, the training set is composed of partitions 0 through i - 1</span>
         <span class="n">training_instances</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">partitions</span><span class="p">[</span><span class="n">i</span><span class="p">][:])</span>
         <span class="n">tree</span> <span class="o">=</span> <span class="n">create_decision_tree</span><span class="p">(</span><span class="n">training_instances</span><span class="p">)</span>
@@ -7697,11 +7674,11 @@ In&nbsp;[105]:
 <p>try to avoid the __private form. I never use it. Trust me. If you use it, you WILL regret it later</p>
 </blockquote>
 <p>We will follow this advice and avoid using the double underscore prefix in user-defined member variables and methods.</p>
-<p>Python has a number of pre-defined <a href="http://docs.python.org/2/reference/datamodel.html#special-method-names">special method names</a>, all of which are denoted by leading and trailing double underscores. For example, the <a href="http://docs.python.org/2/reference/datamodel.html#object.__init__"><code>object.__init__(self[, ...])</code></a> method is used to specify instructions that should be executed whenever a new object of a class is instantiated.</p>
-<p>The code below defines a class, <code>SimpleDecisionTree</code>, with a single pseudo-protected member variable <code>_tree</code> and a pseudo-protected tree construction method <code>_create()</code>, two public methods - <code>classify()</code> and <code>pprint()</code> - and an initialization method that takes an optional list of training <code>instances</code> and a <code>target_attribute_index</code>.</p>
+<p>Python has a number of pre-defined <a href="http://docs.python.org/2/reference/datamodel.html#special-method-names">special method names</a>, all of which are denoted by leading and trailing double underscores. For example, the <a href="http://docs.python.org/2/reference/datamodel.html#object.__init__"><strong><code>object.__init__(self[, ...])</code></strong></a> method is used to specify instructions that should be executed whenever a new object of a class is instantiated.</p>
+<p>The code below defines a class, <strong><code>SimpleDecisionTree</code></strong>, with a single pseudo-protected member variable <code>_tree</code> and a pseudo-protected tree construction method <code>_create()</code>, two public methods - <code>classify()</code> and <code>pprint()</code> - and an initialization method that takes an optional list of training <code>instances</code> and a <code>target_attribute_index</code>.</p>
 <p>The <code>_create()</code> method is identical to the <code>create_decision_tree()</code> function above, with the inclusion of the <code>self</code> parameter (as it is now a class method). The <code>classify()</code> method is a similarly modified version of the <code>classify()</code> and <code>classification_accuracy()</code> functions above, with references to <code>tree</code> converted to <code>self._tree</code>. The <code>pprint()</code> method prints the tree in a human-readable format.</p>
 <p>Note that other machine learning libraries may use different terminology for the methods we've defined here. For example, in the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html"><code>sklearn.tree.DecisionTreeClassifier</code></a> class (and in most <code>sklearn</code> classifier classes), the method for constructing a classifier is named <a href="http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier.fit"><code>fit()</code></a> - since it &quot;fits&quot; the data to a model - and the method for classifying instances is named <a href="http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier.predict"><code>predict()</code></a> - since it is predicting the class label for an instance.</p>
-<p>Most comments and the use of the trace parameter have been removed to make the code more compact, but are included in the version found in <code>SimpleDecisionTree.py</code>.</p>
+<p>Most comments and the use of the trace parameter have been removed to make the code more compact, but are included in the version found in <strong><code>SimpleDecisionTree.py</code></strong>.</p>
 </div>
 </div>
 </div>
@@ -7752,8 +7729,8 @@ In&nbsp;[106]:
             <span class="k">return</span> <span class="n">default_class</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">tree</span>
-        <span class="n">attribute_index</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">attribute_values</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">attribute_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>  <span class="c"># using list(dict.keys()) for Python 3 compatibiity</span>
+        <span class="n">attribute_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">instance_attribute_value</span> <span class="o">=</span> <span class="n">instance</span><span class="p">[</span><span class="n">attribute_index</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">instance_attribute_value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">attribute_values</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">default_class</span>
