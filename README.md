@@ -4,12 +4,12 @@ This short primer on [Python](http://www.python.org/) is designed to provide a r
 
 The primer is spread across a collection of [IPython Notebooks](http://ipython.org/notebook.html), and the easiest way to use the primer is to [install IPython Notebook](http://ipython.org/install.html) on your computer. You can also [install Python](https://www.python.org/downloads/), and manually copy and paste the pieces of sample code into the Python interpreter, as the primer only makes use of the Python standard libraries.
 
-There are three versions of the primer. Two versions contain the entire primer in a single notebook:
+There are three versions of the primer. Two versions are compatible with Python 2 or Python 3), and contain the entire primer in a single notebook:
 
 * Single IPython Notebook: [Python_for_Data_Science_all.ipynb](Python_for_Data_Science_all.ipynb)
 * Single web page (HTML): [Python_for_Data_Science_all.html](Python_for_Data_Science_all.html)
 
-The other version divides the primer into 5 separate notebooks:
+The other version divides the primer into 5 separate notebooks (Python 2 only):
 
 * [Introduction](1_Introduction.ipynb)
 * [Data Science: Basic Concepts](2_Data_Science_Basic_Concepts.ipynb)
@@ -29,11 +29,17 @@ There are also 2 data files, based on the [mushroom dataset](https://archive.ics
 
 ## Change Log
 
+2015-02-23
+
+* Added attribution for suggested changes to accommodate Python 3 to [Nick Coghlan](https://twitter.com/ncoghlan_dev)
+
 2015-02-22
 
 * Added `from __future__ import print_function, division` for Python 3 compatibility
-* Updated `simple_ml.py` to also use Python 3 `print_function` and `division`
-* Changed "call by reference" to "call by sharing"
+* Updated `simple_ml.py` and `SimpleDecisionTree.py` to also use Python 3 `print_function` and `division`
+* Replaced `xrange()` (Python 2 only) with `range()` (Python 2 or 3)
+* Replaced `dict.iteritems()` (Python 2 only) with `dict.items()` (Python 2 or 3)
+* Changed ["call by reference"](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_reference) to ["call by sharing"](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_sharing)
 * Added `isinstance()` (and reference to duck typing) to section on `type()`
 * Added variable for `delimiter` rather than hard-coding `'|'` character
 * Cleaned up various cells

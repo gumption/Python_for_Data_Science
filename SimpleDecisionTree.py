@@ -1,3 +1,5 @@
+from __future__ import print_function, division
+
 ''' A class to implement a simple decision tree (based on ID3)
 '''
 
@@ -38,14 +40,14 @@ class SimpleDecisionTree:
         # If the dataset is empty or the candidate attributes list is empty, return the default value. 
         if not instances or not candidate_attribute_indexes:
             if trace:
-                print '{}Using default class {}'.format('< ' * trace, default_class)
+                print('{}Using default class {}'.format('< ' * trace, default_class))
             return default_class
 
         # If all the instances have the same class label, return that class label
         elif len(class_labels_and_counts) == 1:
             class_label = class_labels_and_counts.most_common(1)[0][0]
             if trace:
-                print '{}All {} instances have label {}'.format('< ' * trace, len(instances), class_label)
+                print('{}All {} instances have label {}'.format('< ' * trace, len(instances), class_label))
             return class_label
         else:
             default_class = simple_ml.majority_value(instances, target_attribute_index)
@@ -53,7 +55,7 @@ class SimpleDecisionTree:
             # Choose the next best attribute index to best classify the instances
             best_index = simple_ml.choose_best_attribute_index(instances, candidate_attribute_indexes, target_attribute_index)
             if trace:
-                print '{}Creating tree node for attribute index {}'.format('> ' * trace, best_index)
+                print('{}Creating tree node for attribute index {}'.format('> ' * trace, best_index))
 
             # Create a new decision tree node with the best attribute index and an empty dictionary object (for now)
             tree = {best_index:{}}
@@ -66,13 +68,13 @@ class SimpleDecisionTree:
 
             for attribute_value in partitions:
                 if trace:
-                    print '{}Creating subtree for value {} ({}, {}, {}, {})'.format(
+                    print('{}Creating subtree for value {} ({}, {}, {}, {})'.format(
                         '> ' * trace,
                         attribute_value, 
                         len(partitions[attribute_value]), 
                         len(remaining_candidate_attribute_indexes), 
                         target_attribute_index, 
-                        default_class)
+                        default_class))
 
                 # Create a subtree for each value of the the best attribute
                 subtree = self._create(
@@ -99,8 +101,8 @@ class SimpleDecisionTree:
             return default_class
         if not isinstance(tree, dict):
             return tree
-        attribute_index = tree.keys()[0]
-        attribute_values = tree.values()[0]
+        attribute_index = list(tree.keys())[0]
+        attribute_values = list(tree.values())[0]
         instance_attribute_value = instance[attribute_index]
         if instance_attribute_value not in attribute_values:
             return default_class
@@ -115,7 +117,7 @@ class SimpleDecisionTree:
         predicted_labels = self.classify_list(instances, default_class)
         actual_labels = [x[0] for x in instances]
         counts = Counter([x == y for x, y in zip(predicted_labels, actual_labels)])
-        return counts[True], counts[False], float(counts[True]) / len(instances)
+        return counts[True], counts[False], counts[True] / len(instances)
         
         
     def pprint(self):
