@@ -4,11 +4,10 @@ from __future__ import print_function, division
 '''
 
 __author__ = 'Joe McCarthy'
-__copyright__ = 'Copyright 2014, Atigeo LLC'
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 __date__ = '2014-04-04'
 __maintainer__ = 'Joe McCarthy'
-__email__ = 'joe.mccarthy@atigeo.com'
+__email__ = 'joe@interrelativity.com'
 __status__ = 'Development'
 
 
@@ -159,17 +158,16 @@ def print_attribute_names_and_values(instance, attribute_names):
 
 
 def attribute_value_counts(instances, attribute, attribute_names):
-    '''Returns a defaultdict containing the counts of occurrences of each value of attribute in the list of instances.
+    '''Returns a Counter containing the counts of occurrences
+     of each value of attribute in the list of instances.
     attribute_names is a list of names of attributes.'''
     i = attribute_names.index(attribute)
-    value_counts = defaultdict(int)
-    for instance in instances:
-        value_counts[instance[i]] += 1
-    return value_counts
+    return Counter([instance[i] for instance in instances])
 
 
 def print_all_attribute_value_counts(instances, attribute_names):
-    '''Returns a list of defaultdicts containing the counts of occurrences of each value of each attribute in the list of instances.
+    '''Returns a list of Counters containing the counts of occurrences 
+    of each value of each attribute in the list of instances.
     attribute_names is a list of names of attributes.'''
     num_instances = len(instances)
     for attribute in attribute_names:
