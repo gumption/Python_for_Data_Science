@@ -37,7 +37,7 @@ There are also 2 data files, based on the [mushroom dataset](https://archive.ics
 * Reordered introduction of `defaultdict` and `Counter` containers
 * Reordered the values returned by `classification_accuracy()`
 * Added more examples of formatted printing via `str.format()`
-* Various and sundry other minor changes to prepare for [tutorial](http://seattle.pydata.org/schedule/presentation/8/) at [[PyData Seattle 2015](http://seattle.pydata.org/)
+* Various and sundry other minor changes to prepare for [tutorial](http://seattle.pydata.org/schedule/presentation/8/) at [PyData Seattle 2015](http://seattle.pydata.org/)
 
 2015-02-23
 
