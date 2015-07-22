@@ -4,12 +4,13 @@ This short primer on [Python](http://www.python.org/) is designed to provide a r
 
 The primer is spread across a collection of [IPython Notebooks](http://ipython.org/notebook.html), and the easiest way to use the primer is to [install IPython Notebook](http://ipython.org/install.html) on your computer. You can also [install Python](https://www.python.org/downloads/), and manually copy and paste the pieces of sample code into the Python interpreter, as the primer only makes use of the Python standard libraries.
 
-There are three versions of the primer. Two versions are compatible with Python 2 or Python 3), and contain the entire primer in a single notebook:
+There are four versions of the primer. Three versions contain the entire primer in a single notebook:
 
-* Single IPython Notebook: [Python_for_Data_Science_all.ipynb](Python_for_Data_Science_all.ipynb)
+* Single IPython Notebook (cleared output cells): [Python_for_Data_Science_clean.ipynb](Python_for_Data_Science_clean.ipynb)
+* Single IPython Notebook (filled output cells): [Python_for_Data_Science_clean.ipynb](Python_for_Data_Science_all.ipynb)
 * Single web page (HTML): [Python_for_Data_Science_all.html](Python_for_Data_Science_all.html)
 
-The other version divides the primer into 5 separate notebooks (Python 2 only):
+The other version divides the primer into 5 separate notebooks:
 
 * [Introduction](1_Introduction.ipynb)
 * [Data Science: Basic Concepts](2_Data_Science_Basic_Concepts.ipynb)
@@ -20,7 +21,7 @@ The other version divides the primer into 5 separate notebooks (Python 2 only):
 There are several exercises included in the notebooks. Sample solutions to those exercises can be found in two Python source files:
 
 * [`simple_ml.py`](simple_ml.py): a collection of simple machine learning utility functions
-* [`SimpleDecisionTree.py`](SimpleDecisionTree.py): a Python class to encapsulate a simplified version of a popular machine learning model
+* [`simple_decision_tree.py`](simple_decision_tree.py): a Python class to encapsulate a simplified version of a popular machine learning model
 
 There are also 2 data files, based on the [mushroom dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom) in the UCI Machine Learning Repository, used for coding examples, exploratory data analysis and building and evaluating decision trees in Python:
 
@@ -28,6 +29,15 @@ There are also 2 data files, based on the [mushroom dataset](https://archive.ics
 * [`agaricus-lepiota.attributes`](agaricus-lepiota.attributes): a machine-readable list of attribute names and possible attribute values and their abbreviations
 
 ## Change Log
+
+2015-07-21
+
+* Updated 5 subnotebooks for Python 3 compatibility
+* Changed file name of `SimpleDecisionTree.py` to `simple_decision_tree.py` (class name is unchanged)
+* Reordered introduction of `defaultdict` and `Counter` containers
+* Reordered the values returned by `classification_accuracy()`
+* Added more examples of formatted printing via `str.format()`
+* Various and sundry other minor changes to prepare for [tutorial](http://seattle.pydata.org/schedule/presentation/8/) at [[PyData Seattle 2015](http://seattle.pydata.org/)
 
 2015-02-23
 
