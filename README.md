@@ -30,6 +30,10 @@ There are also 2 data files, based on the [mushroom dataset](https://archive.ics
 
 ## Change Log
 
+2015-07-26
+
+* Updated `all` and `clean` notebooks with additional cells base on PyData Seattle 2015 tutorial Q&A
+
 2015-07-21
 
 * Updated 5 subnotebooks for Python 3 compatibility
