@@ -7,7 +7,7 @@ The primer is spread across a collection of [IPython Notebooks](http://ipython.o
 There are four versions of the primer. Three versions contain the entire primer in a single notebook:
 
 * Single IPython Notebook (cleared output cells): [Python_for_Data_Science_clean.ipynb](Python_for_Data_Science_clean.ipynb)
-* Single IPython Notebook (filled output cells): [Python_for_Data_Science_clean.ipynb](Python_for_Data_Science_all.ipynb)
+* Single IPython Notebook (filled output cells): [Python_for_Data_Science_all.ipynb](Python_for_Data_Science_all.ipynb)
 * Single web page (HTML): [Python_for_Data_Science_all.html](Python_for_Data_Science_all.html)
 
 The other version divides the primer into 5 separate notebooks:
