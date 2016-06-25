@@ -195,7 +195,7 @@ def entropy(instances, class_index=0, attribute_name=None, value_name=None):
         	'={}'.format(value_name) if value_name else ''))
     for value in value_counts:
         value_probability = value_counts[value] / num_instances
-        child_entropy = value_probability * math.log(value_probability, num_values)
+        child_entropy = value_probability * math.log(value_probability, 2)
         attribute_entropy -= child_entropy
         if attribute_name:
             print('  - p({0}) x log(p({0}), {1})  =  - {2:5.3f} x log({2:5.3f})  =  {3:5.3f}'.format(
