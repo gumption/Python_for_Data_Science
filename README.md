@@ -1,4 +1,5 @@
-# Python for Data Science
+# Python for Data Science                                                  
+
 
 This short primer on [Python](http://www.python.org/) is designed to provide a rapid "on-ramp" for computer programmers who are already familiar with basic concepts and constructs in other programming languages to learn enough about Python to effectively use open-source and proprietary Python-based machine learning and data science tools.
 
@@ -57,3 +58,7 @@ There are also 2 data files, based on the [mushroom dataset](https://archive.ics
 * Added `isinstance()` (and reference to duck typing) to section on `type()`
 * Added variable for `delimiter` rather than hard-coding `'|'` character
 * Cleaned up various cells
+
+
+
+🙏🙏🙏🙏🙏🙏🤦‍♂️🤦‍♂️🤦‍♂️🤦‍♂️🤦‍♀️🤦‍♀️🤦‍♀️{ plz Helo stop the spread and stay healthy🤦‍♀️🤦‍♀️🤦‍♀️🤦‍♂️🤦‍♂️🤦‍♂️🙏🙏🙏🙏🙏🙏
