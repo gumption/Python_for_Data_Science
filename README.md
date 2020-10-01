@@ -2,6 +2,9 @@
 
 This short primer on [Python](http://www.python.org/) is designed to provide a rapid "on-ramp" for computer programmers who are already familiar with basic concepts and constructs in other programming languages to learn enough about Python to effectively use open-source and proprietary Python-based machine learning and data science tools.
 
+
+Data is the new Oil. This statement shows how every modern IT system is driven by capturing, storing and analysing data for various needs. Be it about making decision for business, forecasting weather, studying protein structures in biology or designing a marketing campaign. All of these scenarios involve a multidisciplinary approach of using mathematical models, statistics, graphs, databases and of course the business or scientific logic behind the data analysis. So we need a programming language which can cater to all these diverse needs of data science. Python shines bright as one such language as it has numerous libraries and built in features which makes it easy to tackle the needs of Data science.
+
 The primer is spread across a collection of [IPython Notebooks](http://ipython.org/notebook.html), and the easiest way to use the primer is to [install IPython Notebook](http://ipython.org/install.html) on your computer. You can also [install Python](https://www.python.org/downloads/), and manually copy and paste the pieces of sample code into the Python interpreter, as the primer only makes use of the Python standard libraries.
 
 There are four versions of the primer. Three versions contain the entire primer in a single notebook:
