@@ -1,4 +1,5 @@
-# Python for Data Science
+# Python for Data Science                                                   plz Helo stop the spread and stay healthy
+
 
 This short primer on [Python](http://www.python.org/) is designed to provide a rapid "on-ramp" for computer programmers who are already familiar with basic concepts and constructs in other programming languages to learn enough about Python to effectively use open-source and proprietary Python-based machine learning and data science tools.
 
