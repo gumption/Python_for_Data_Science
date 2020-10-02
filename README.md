@@ -2,7 +2,6 @@
 
 This short primer on [Python](http://www.python.org/) is designed to provide a rapid "on-ramp" for computer programmers who are already familiar with basic concepts and constructs in other programming languages to learn enough about Python to effectively use open-source and proprietary Python-based machine learning and data science tools.
 
-The primer is spread across a collection of [IPython Notebooks](http://ipython.org/notebook.html), and the easiest way to use the primer is to [install IPython Notebook](http://ipython.org/install.html) on your computer. You can also [install Python](https://www.python.org/downloads/), and manually copy and paste the pieces of sample code into the Python interpreter, as the primer only makes use of the Python standard libraries.
 
 There are four versions of the primer. Three versions contain the entire primer in a single notebook:
 
